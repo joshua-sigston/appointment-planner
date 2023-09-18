@@ -1,0 +1,8 @@
+.contacts_page {
+  padding: 1em;
+  gap: 1em;
+}
+
+select {
+  max-width: 20rem;
+}

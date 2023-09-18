@@ -1,0 +1,9 @@
+.card {
+  background-color: hsla(var(--clr-gray), .2);
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow-drops);
+}

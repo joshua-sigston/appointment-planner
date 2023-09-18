@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+/* reset and custom style classes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  font-size: 18px;
+  font-family: var(--ff-base);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-paragraph);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* background image styling */
+/* container:after {
+  content: '';
+  position: absolute;
+  background-color: var(--clr-blue-dark);
+  inset: 0;
+  z-index: -1;
+  opacity: .9; */
+  /* goes in parent selector => */
+  /* position: relative;
+  isolation: isolate;
+} */
+
+/* Root Styles */
+:root {
+  /* colors */
+  --clr-black: 216, 18%, 16%;
+  --clr-gray: 217, 10%, 25%;
+  --clr-accent: 183, 100%, 35%;
+  --clr-white: 0, 0%, 93%;
+
+  /* font families */
+  --ff-title: 'Yantramanav', sans-serif;
+  --ff-paragraph: 'Biryani', sans-serif;
+
+  /* font sizes */
+  --fs-200: clamp(0.78rem, calc(0.71rem + 0.35vw), 0.96rem);
+  --fs-300: clamp(0.94rem, calc(0.84rem + 0.51vw), 1.2rem);
+  --fs-400: clamp(1.13rem, calc(0.98rem + 0.73vw), 1.5rem);
+  --fs-500: clamp(1.94rem, calc(1.56rem + 1.92vw), 2.93rem);
+  --fs-600: clamp(2.8rem, calc(2.11rem + 3.47vw), 4.58rem);
+
+  --line-height-lrg: 62px;
+  --line-height-sml: 28px;
+
+  --transition: 300ms ease-in-out;
+  --transition-two: 600ms ease-in-out;
+  --transition-three: 800ms ease-in-out;
+
+  --box-shadow-drops: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --box-shadow-material: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --box-shadow-five: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --box-shadow-sketch: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --box-shadow-stripe: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  --box-shadow-stripe-19: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --box-shadow-active: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* general styles */
+
+.grid {
+  width: 100%;
+  display: grid;
+  gap: 1em;
+}
+
+.flex_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex_column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.center_flex {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.center_grid {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  gap: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inactive {
+  display: none;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--ff-title);
+}
+
+h1 {
+  font-size: var(--fs-600);
+}
+
+h2 {
+  font-size: var(--fs-500);
+}
+
+h3 {
+  font-size: var(--fs-400);
+}
+
+p {
+  font-family: var(--ff-paragraph);
+  font-size: var(--fs-200);
+}
+
+a, button, label {
+  font-family: var(--ff-paragraph);
+  font-size: var(--fs-300);
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+section, footer, header, body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section {
+  min-height: 90vh;
+}
+
+.main_container {
+  min-height: 100vh;
+  background-color: var(--white-500);
+  overflow: hidden;
+  display: grid;
+  gap: 1em;
+}
+
+.add {
+  color: hsl(var(--clr-accent));
+  transition: var(--transition);
+}
+
+.add:hover {
+  font-weight: bolder;
+}
+
+.form {
+  gap: 1em;
+  align-items: center;
+}
+
+.form input {
+  padding: .3em .5em;
+  border-radius: .5rem;
+  border: none;
+  background-color: hsla(var(--clr-white), .5);
+  min-width: 15rem;
+}
+
+.form button {
+  padding: .3em .5em;
+  font-family: var(--ff-title);
+  border: none;
+  border-radius: .3em;
+  background-color: hsl(var(--clr-accent));
+  color: #fff;
+  box-shadow: var(--box-shadow-five);
+  transition: var(--transition);
+}
+
+.form button:hover {
+  background-color: hsla(var(--clr-accent), .8);
+  cursor: pointer;
 }

@@ -1,0 +1,10 @@
+.home_page {
+  background-color: hsl(var(--clr-white));
+  padding: 1em;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.list_container {
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+}

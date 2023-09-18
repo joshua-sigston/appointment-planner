@@ -1,0 +1,16 @@
+nav {
+  align-self: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+a {
+  color: hsl(var(--clr-black));
+  font-family: var(--ff-title);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: hsl(var(--clr-accent));
+  font-weight: bolder;
+}
